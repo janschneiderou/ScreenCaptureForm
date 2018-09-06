@@ -109,7 +109,7 @@ namespace ScreenCaptureForm
             timer1.Interval = 20;
             timer1.Tick += timer1_Tick;
             vf = new VideoFileWriter();
-            vf.Open("Exported_Video.avi", 800, 600, 25, VideoCodec.MPEG4, 1000000);
+            vf.Open("Exported_Video.avi", 800, 600, 25, VideoCodec.Default, 1000000);
 
             int screenWidth = Screen.PrimaryScreen.WorkingArea.Width * 2;
             int screenHeight = Screen.PrimaryScreen.WorkingArea.Height * 2;
@@ -153,9 +153,9 @@ namespace ScreenCaptureForm
             time = time + ".mp4";
             filename = time;
             // vf.Open(time, (int)System.Windows.SystemParameters.PrimaryScreenWidth * 2, (int)System.Windows.SystemParameters.PrimaryScreenHeight * 2, 25, VideoCodec.MPEG4, 1000000);
-            //vf.Open(time, Screen.PrimaryScreen.WorkingArea.Width * 2, Screen.PrimaryScreen.WorkingArea.Height * 2, 25, VideoCodec.VP8);
+            //vf.Open(time, Screen.PrimaryScreen.WorkingArea.Width * 2, Screen.PrimaryScreen.WorkingArea.Height * 2, 25, VideoCodec.MPEG4);
             
-            vf.Open(time, Screen.PrimaryScreen.WorkingArea.Width * 2, Screen.PrimaryScreen.WorkingArea.Height * 2, 25, VideoCodec.MPEG4, 200000);
+            vf.Open(time, Screen.PrimaryScreen.WorkingArea.Width * 2, Screen.PrimaryScreen.WorkingArea.Height * 2, 25, VideoCodec.Default, 200000);
             timer1.Start();
         }
 
