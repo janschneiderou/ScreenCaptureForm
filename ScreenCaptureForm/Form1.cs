@@ -152,10 +152,10 @@ namespace ScreenCaptureForm
             time = time + "H" + DateTime.Now.Minute.ToString() + "M" + DateTime.Now.Second.ToString() + "S";
             time = time + ".mp4";
             filename = time;
-            // vf.Open(time, (int)System.Windows.SystemParameters.PrimaryScreenWidth * 2, (int)System.Windows.SystemParameters.PrimaryScreenHeight * 2, 25, VideoCodec.MPEG4, 1000000);
+            // vf.Open(time, (int)System.Windows.SystemParameters.PrimaryScreenWidth * 2, (int)System.Windows.SystemParameters.PrimaryScreenHeight * 2, 25, VideoCodec.MPEG4, 200000);
             //vf.Open(time, Screen.PrimaryScreen.WorkingArea.Width * 2, Screen.PrimaryScreen.WorkingArea.Height * 2, 25, VideoCodec.MPEG4);
             
-            vf.Open(time, Screen.PrimaryScreen.WorkingArea.Width * 2, Screen.PrimaryScreen.WorkingArea.Height * 2, 25, VideoCodec.Default, 200000);
+            vf.Open(time, Screen.PrimaryScreen.WorkingArea.Width * 2, Screen.PrimaryScreen.WorkingArea.Height * 2, 25, VideoCodec.Default, 1000000);
             timer1.Start();
         }
 
