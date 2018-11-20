@@ -63,13 +63,13 @@ namespace ScreenCaptureForm
             try
             {
                 myConnector = new ConnectorHub.ConnectorHub();
-                myConnector.init();
-                myConnector.sendReady();
+                myConnector.Init();
+                myConnector.SendReady();
                 myStart = new startRecording(startMethod);
                 myStop = new stopRecording(stopMethod);
 
-                myConnector.startRecordingEvent += MyConnector_startRecordingEvent;
-                myConnector.stopRecordingEvent += MyConnector_stopRecordingEvent;
+                myConnector.StartRecordingEvent += MyConnector_startRecordingEvent;
+                myConnector.StopRecordingEvent += MyConnector_stopRecordingEvent;
             }
             catch
             {
@@ -79,7 +79,7 @@ namespace ScreenCaptureForm
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            myConnector.close();
+            myConnector.Close();
         }
 
         private void stopMethod()
@@ -166,7 +166,7 @@ namespace ScreenCaptureForm
             vf.Close();
             try
             {
-                myConnector.sendTCPAsync(myConnector.SendFile + filename + myConnector.endSendFile);
+                myConnector.SendTCPAsync(myConnector.SendFile + filename + myConnector.endSendFile);
             }
             catch (Exception x)
             {
@@ -176,7 +176,7 @@ namespace ScreenCaptureForm
         }
         public void close()
         {
-            myConnector.close();
+            myConnector.Close();
         }
     }
 }
